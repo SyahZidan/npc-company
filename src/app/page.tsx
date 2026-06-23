@@ -532,15 +532,17 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <section id="company" className="company-section section-spacing section-pad relative overflow-hidden bg-[#ece8dc] py-28 text-[#10140f] md:py-40">
+      <section id="company" className="company-section section-spacing section-pad section-block relative overflow-hidden bg-[#ece8dc] text-[#10140f]">
         <div className="absolute left-[-8vw] top-12 h-64 w-64 border border-[#10140f]/10" />
         <div className="company-frame mx-auto grid max-w-[1360px] gap-20 lg:grid-cols-[0.9fr_1.1fr]">
-          <Reveal className="grid content-between gap-12">
-            <p className="section-kicker company-kicker text-[#426d31]">{t.company.kicker}</p>
-            <h2 className="mt-7 max-w-4xl text-balance text-[clamp(2.2rem,4.8vw,5.15rem)] font-black uppercase leading-[1] tracking-[-0.018em]">
-              {t.company.title}
-            </h2>
-            <div className="company-profile-image relative mt-4 min-h-[360px] overflow-hidden border border-[#10140f]/12 bg-[#10140f]">
+          <Reveal className="section-intro grid content-between gap-12">
+            <div className="section-head">
+              <p className="section-kicker company-kicker text-[#426d31]">{t.company.kicker}</p>
+              <h2 className="max-w-4xl text-balance text-[clamp(2.2rem,4.8vw,5.15rem)] font-black uppercase leading-[1] tracking-[-0.018em]">
+                {t.company.title}
+              </h2>
+            </div>
+            <div className="company-profile-image relative mt-8 min-h-[360px] overflow-hidden border border-[#10140f]/12 bg-[#10140f]">
               <Image
                 src="/company-profile-team.png"
                 alt="NPC company profile team at an aircraft hangar"
@@ -556,7 +558,7 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <div className="company-copy-panel grid content-between gap-14">
+          <div className="company-copy-panel grid content-between gap-16">
             <Reveal delay={0.08} className="company-lead-block">
               <p className="max-w-3xl text-lg font-semibold leading-loose text-[#1d241a] md:text-2xl">
                 {t.company.body}
@@ -564,9 +566,9 @@ export default function Home() {
             </Reveal>
             <div className="company-card-strip grid gap-px bg-[#10140f]/12 sm:grid-cols-3">
               {t.company.cards.map(([title, body], index) => (
-                <Reveal key={title} delay={0.1 + index * 0.06} className="company-info-card bg-[#f4efe2]/82 p-7 md:p-9">
+                <Reveal key={title} delay={0.1 + index * 0.06} className="company-info-card bg-[#f4efe2]/82">
                   <h3 className="text-lg font-black uppercase leading-tight tracking-[-0.01em]">{title}</h3>
-                  <p className="mt-5 text-sm leading-loose text-[#4f594a]">{body}</p>
+                  <p className="mt-6 text-sm leading-loose text-[#4f594a]">{body}</p>
                 </Reveal>
               ))}
             </div>
@@ -574,12 +576,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="capabilities" className="work-section section-spacing section-pad relative bg-[#080b08] py-32 text-white md:py-44">
+      <section id="capabilities" className="work-section section-spacing section-pad section-block relative bg-[#080b08] text-white">
         <div className="mx-auto max-w-[1440px]">
-          <Reveal className="mb-20 grid gap-10 md:grid-cols-[0.86fr_1.14fr] md:items-end">
-            <div>
+          <Reveal className="section-intro section-head-gap grid gap-10 md:grid-cols-[0.86fr_1.14fr] md:items-end">
+            <div className="section-head">
               <p className="section-kicker text-[#8aff61]">{t.work.kicker}</p>
-              <h2 className="mt-7 text-[clamp(2.25rem,4.7vw,5rem)] font-black uppercase leading-[1] tracking-[-0.018em]">
+              <h2 className="text-[clamp(2.25rem,4.7vw,5rem)] font-black uppercase leading-[1] tracking-[-0.018em]">
                 {t.work.title}
               </h2>
             </div>
@@ -607,13 +609,13 @@ export default function Home() {
                         0{index + 1} / lane
                       </span>
                     </div>
-                    <div className="relative flex flex-1 flex-col gap-8 p-7 pb-9 md:p-8 md:pb-10">
+                    <div className="capability-panel-body relative flex flex-1 flex-col gap-8">
                       <div className="absolute right-7 top-7 text-white/12 transition duration-500 group-hover:text-[#8aff61]/35">
                         <Icon size={52} weight="thin" />
                       </div>
                       <div>
                         <p className="font-mono text-[10px] font-black uppercase tracking-[0.26em] text-[#8aff61]">{item.eyebrow}</p>
-                        <h3 className="mt-6 max-w-2xl text-3xl font-black uppercase leading-[1.04] tracking-[-0.012em] md:text-[2.18rem] xl:text-[2.35rem]">
+                        <h3 className="mt-7 max-w-2xl text-3xl font-black uppercase leading-[1.04] tracking-[-0.012em] md:text-[2.18rem] xl:text-[2.35rem]">
                           {item.title}
                         </h3>
                       </div>
@@ -634,21 +636,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="model" className="model-section section-spacing section-pad bg-[#f7f3e8] py-32 text-[#10140f] md:py-44">
-        <div className="mx-auto grid max-w-[1440px] gap-16 lg:grid-cols-[0.68fr_1.32fr]">
-          <Reveal>
+      <section id="model" className="model-section section-spacing section-pad section-block bg-[#f7f3e8] text-[#10140f]">
+        <div className="mx-auto grid max-w-[1440px] gap-20 lg:grid-cols-[0.68fr_1.32fr]">
+          <Reveal className="section-intro section-head">
             <p className="section-kicker text-[#426d31]">{t.model.kicker}</p>
-            <h2 className="mt-6 text-[clamp(2.15rem,4.8vw,5rem)] font-black uppercase leading-[1] tracking-[-0.018em]">
+            <h2 className="text-[clamp(2.15rem,4.8vw,5rem)] font-black uppercase leading-[1] tracking-[-0.018em]">
               {t.model.title}
             </h2>
-            <p className="mt-8 max-w-md text-base font-semibold leading-loose text-[#4f594a]">{t.model.body}</p>
+            <p className="max-w-md text-base font-semibold leading-loose text-[#4f594a]">{t.model.body}</p>
           </Reveal>
-          <Reveal delay={0.08}>
-            <div className="model-board relative overflow-hidden border border-[#10140f]/14 bg-[#f0eadb] p-5 text-[#10140f] md:p-7">
-              <div className="model-board-head grid gap-4 border-b border-[#10140f]/14 pb-5 md:grid-cols-[1fr_auto] md:items-end">
+          <Reveal delay={0.08} className="section-body-gap lg:mt-0">
+            <div className="model-board relative overflow-hidden border border-[#10140f]/14 bg-[#f0eadb] text-[#10140f]">
+              <div className="model-board-head grid gap-4 border-b border-[#10140f]/14 md:grid-cols-[1fr_auto] md:items-end">
                 <div>
                   <p className="font-mono text-[10px] font-black uppercase tracking-[0.24em] text-[#426d31]">Procurement flow</p>
-                  <p className="mt-2 max-w-2xl text-sm leading-loose text-[#4f594a]">
+                  <p className="mt-3 max-w-2xl text-sm leading-loose text-[#4f594a]">
                     One working sequence from requirement intake to handover, with each checkpoint visible.
                   </p>
                 </div>
@@ -661,7 +663,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="model-flow-line" />
-              <div className="model-steps grid gap-4 pt-7">
+              <div className="model-steps grid gap-5">
                 {t.model.rows.map(([number, title, body], index) => (
                   <motion.article
                     key={title}
@@ -669,7 +671,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-10% 0px" }}
                     transition={{ delay: index * 0.07, duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-                    className="model-step-card group grid min-h-[8.25rem] gap-5 border border-[#10140f]/12 bg-[#fbf7ed]/80 p-5 md:grid-cols-[4.5rem_9rem_1fr]"
+                    className="model-step-card group grid min-h-[8.25rem] gap-6 border border-[#10140f]/12 bg-[#fbf7ed]/80 md:grid-cols-[4.5rem_9rem_1fr]"
                   >
                     <span className="font-mono text-xs font-black text-[#426d31]">{number}</span>
                     <h3 className="text-lg font-black uppercase tracking-[-0.01em] text-[#10140f]">{title}</h3>
@@ -694,20 +696,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="contact-section section-spacing section-pad relative overflow-hidden bg-[#10140f] py-32 text-white md:py-44">
+      <section id="contact" className="contact-section section-spacing section-pad section-block relative overflow-hidden bg-[#10140f] text-white">
         <div className="absolute right-[-12vw] top-[-12vw] h-[42vw] w-[42vw] border border-[#8aff61]/14" />
-        <div className="mx-auto grid max-w-[1440px] gap-16 lg:grid-cols-[0.9fr_1.1fr]">
-          <Reveal className="flex flex-col justify-between gap-12">
-            <div>
+        <div className="mx-auto grid max-w-[1440px] gap-20 lg:grid-cols-[0.9fr_1.1fr]">
+          <Reveal className="section-intro flex flex-col justify-between gap-16">
+            <div className="section-head">
               <p className="section-kicker text-[#8aff61]">{t.contact.kicker}</p>
-              <h2 className="mt-6 max-w-xl text-[clamp(2.25rem,4.9vw,5.2rem)] font-black uppercase leading-[1] tracking-[-0.018em]">
+              <h2 className="max-w-xl text-[clamp(2.25rem,4.9vw,5.2rem)] font-black uppercase leading-[1] tracking-[-0.018em]">
                 {t.contact.title}
               </h2>
-              <p className="mt-8 max-w-lg text-lg leading-loose text-white/64">
+              <p className="max-w-lg text-lg leading-loose text-white/64">
                 {t.contact.body}
               </p>
             </div>
-            <div className="grid gap-5 border-t border-white/12 pt-7 text-sm text-white/68">
+            <div className="contact-info-block border-t border-white/12 text-sm text-white/68">
               <p className="flex gap-3"><EnvelopeSimple className="mt-0.5 text-[#8aff61]" size={19} /> info@npc-global.id</p>
               <p className="flex gap-3"><PhoneCall className="mt-0.5 text-[#8aff61]" size={19} /> +62 815-8935-333</p>
               <p className="flex max-w-lg gap-3 leading-relaxed"><MapPinLine className="mt-0.5 shrink-0 text-[#8aff61]" size={19} /> Ruko Vila Mutiara Lido No.12, Kel. Cijeruk, Cigombong, Bogor, Jawa Barat</p>
@@ -715,7 +717,7 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <form onSubmit={(event) => event.preventDefault()} className="contact-plate grid gap-6 border border-white/12 bg-white/[0.045] p-5 backdrop-blur-xl md:p-8">
+            <form onSubmit={(event) => event.preventDefault()} className="contact-plate grid gap-6 border border-white/12 bg-white/[0.045] backdrop-blur-xl">
               <div className="grid gap-5 md:grid-cols-2">
                 <label className="grid gap-2 text-[11px] font-black uppercase tracking-[0.2em] text-white/58">
                   {t.contact.fullName}
@@ -758,16 +760,16 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-white/10 bg-[#080b08] px-5 py-10 text-white/58 md:px-8">
-        <div className="mx-auto flex max-w-[1440px] flex-col gap-7 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-4">
+      <footer className="site-footer border-t border-white/10 bg-[#080b08] px-5 text-white/58 md:px-8">
+        <div className="site-footer-inner mx-auto flex max-w-[1440px] flex-col md:flex-row md:items-center md:justify-between">
+          <div className="site-footer-brand flex items-center">
             <Mark className="h-11 w-11" />
             <div>
               <p className="text-sm font-black uppercase tracking-[0.14em] text-white">PT Nusa Perdana Cipta</p>
-              <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.22em]">{t.footer.subtitle}</p>
+              <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.22em]">{t.footer.subtitle}</p>
             </div>
           </div>
-          <div className="flex flex-wrap gap-5 text-[11px] font-black uppercase tracking-[0.2em]">
+          <div className="site-footer-nav flex flex-wrap text-[11px] font-black uppercase tracking-[0.2em]">
             <a href="#company" className="transition hover:text-[#8aff61]">{t.nav[0].label}</a>
             <a href="#capabilities" className="transition hover:text-[#8aff61]">{t.nav[1].label}</a>
             <a href="/Profil_Perusahaan_PT_Nusa_Perdana_Cipta_Elegan.pdf" className="transition hover:text-[#8aff61]">{t.footer.pdf}</a>

@@ -20,6 +20,14 @@
   --accent-green: #426d31;
   --muted-text-light: #4f594a;
   --muted-text-dark: #aeb8a8;
+
+  --section-pad-y: clamp(6.25rem, 10vw, 8.75rem);
+  --section-intro-top: clamp(2rem, 3.5vw, 3.5rem);
+  --head-kicker-gap: clamp(1.5rem, 2vw, 2rem);
+  --head-title-gap: clamp(2rem, 2.5vw, 2.5rem);
+  --head-content-gap: clamp(3rem, 4vw, 4rem);
+  --card-pad: clamp(2rem, 3vw, 3rem);
+  --card-pad-lg: clamp(2.25rem, 3.2vw, 3rem);
 }
 
 @theme {
@@ -243,6 +251,32 @@ textarea {
   border-top: clamp(4rem, 7vw, 7.5rem) solid #0a0d0a;
 }
 
+.section-block {
+  padding-block: var(--section-pad-y);
+}
+
+.section-intro {
+  padding-top: var(--section-intro-top);
+}
+
+.section-head > h2,
+.section-head > .section-kicker + h2 {
+  margin-top: var(--head-kicker-gap);
+}
+
+.section-head > p,
+.section-head > h2 + p {
+  margin-top: var(--head-title-gap);
+}
+
+.section-head-gap {
+  margin-bottom: var(--head-content-gap);
+}
+
+.section-body-gap {
+  margin-top: var(--head-content-gap);
+}
+
 .nav-shell {
   clip-path: polygon(0 15px, 15px 0, calc(100% - 42px) 0, 100% 24px, 100% 100%, 38px 100%, 0 calc(100% - 24px));
 }
@@ -349,13 +383,13 @@ textarea {
 }
 
 .company-kicker {
-  margin-top: clamp(0.75rem, 1.4vw, 1.5rem);
+  margin-top: 0;
 }
 
 .company-lead-block {
   display: flex;
   align-items: center;
-  padding-block: clamp(2rem, 4vw, 4.5rem);
+  padding-block: clamp(2.5rem, 5vw, 5rem);
 }
 
 .company-card-strip {
@@ -364,7 +398,7 @@ textarea {
 
 .company-info-card {
   min-width: 0;
-  padding-inline: clamp(1.6rem, 2.2vw, 2.5rem);
+  padding: var(--card-pad);
 }
 
 .company-profile-image {
@@ -479,6 +513,7 @@ textarea {
 
 .model-board {
   clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px));
+  padding: var(--card-pad);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.6),
     0 32px 90px rgba(16, 20, 15, 0.2);
@@ -506,9 +541,18 @@ textarea {
   background: linear-gradient(180deg, #426d31, rgba(66, 109, 49, 0.12));
 }
 
+.model-board-head {
+  padding-bottom: clamp(1.5rem, 2vw, 2rem);
+}
+
+.model-steps {
+  padding-top: clamp(2rem, 2.8vw, 2.75rem);
+}
+
 .model-step-card {
   position: relative;
   overflow: hidden;
+  padding: var(--card-pad);
   transition:
     border-color 280ms ease,
     background-color 280ms ease,
@@ -518,7 +562,7 @@ textarea {
 .model-step-card::before {
   position: absolute;
   left: 3.45rem;
-  top: 1.35rem;
+  top: clamp(1.75rem, 2.2vw, 2.25rem);
   width: 0.62rem;
   height: 0.62rem;
   border-radius: 999px;
@@ -556,10 +600,39 @@ textarea {
 .contact-plate {
   clip-path: polygon(0 0, calc(100% - 34px) 0, 100% 34px, 100% 100%, 34px 100%, 0 calc(100% - 34px));
   position: relative;
+  padding: var(--card-pad-lg);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.08),
     inset 0 -60px 100px rgba(138, 255, 97, 0.035),
     0 34px 100px rgba(0, 0, 0, 0.24);
+}
+
+.capability-panel-body {
+  padding: var(--card-pad);
+  padding-bottom: clamp(2.25rem, 3vw, 3rem);
+}
+
+.contact-info-block {
+  display: grid;
+  margin-top: var(--head-content-gap);
+  padding-top: clamp(2rem, 2.8vw, 2.75rem);
+  gap: clamp(1.25rem, 1.8vw, 1.75rem);
+}
+
+.site-footer {
+  padding-block: clamp(3.5rem, 6vw, 5.5rem);
+}
+
+.site-footer-inner {
+  gap: clamp(2rem, 3.5vw, 3rem);
+}
+
+.site-footer-brand {
+  gap: clamp(1.25rem, 1.8vw, 1.5rem);
+}
+
+.site-footer-nav {
+  gap: clamp(1.5rem, 2.2vw, 2rem);
 }
 
 .contact-input {
@@ -633,7 +706,11 @@ textarea {
   }
 
   .company-lead-block {
-    padding-block: 1rem 2rem;
+    padding-block: 1.5rem 2.5rem;
+  }
+
+  .section-intro {
+    padding-top: clamp(1.25rem, 4vw, 2rem);
   }
 
   .model-flow-line {
